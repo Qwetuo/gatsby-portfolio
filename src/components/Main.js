@@ -33,9 +33,11 @@ class Main extends React.Component {
         <article id="resume" className={`${this.props.article === 'resume' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Resume</h2>
           <div className="pdf-container">
-            <object data={`${resume}#toolbar=0&navpanes=0&scrollbar=0`} width="100%" height="100%"/>
+            <object data={`${resume}#toolbar=0&navpanes=0&scrollbar=0`} width="100%" height="100%">
+              <p>File not showing? Click <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/15cA94vj3XniU9TKF6Dv4m0euIB3dJq5g/view?usp=sharing">here</a> to view it on google drive instead.</p>
+            </object>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+          <p>Last updated: 26 November 2018</p>
           {close}
         </article>
 
