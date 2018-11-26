@@ -195,7 +195,15 @@
 					top: calc(-2rem - 1px);
 					height: calc(2rem + 1px);
 				}
-			}
+      }
+      
+      nav {
+        ul {
+          li {
+            margin: auto;
+          }
+        }
+      }
 
 			.logo {
 				width: 4.75rem;
