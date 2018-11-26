@@ -43,7 +43,16 @@
 
 			&.active {
 				display: block !important;
-			}
+      }
+      
+      .pdf-container {
+        position: relative;
+        padding-bottom: 130%;
+      }
+
+      object {
+        position: absolute;
+      }
 
 			.close {
 				display: block;
