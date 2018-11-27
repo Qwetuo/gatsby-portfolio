@@ -44,6 +44,9 @@ const Layout = ({ children, location }) => {
               { name: 'description', content: 'Sample' },
               { name: 'keywords', content: 'sample, something' },
             ]}
+            script={[
+              {src: "https://apis.google.com/js/client:plusone.js"}
+            ]}
           >
             <html lang="en" />
           </Helmet>
