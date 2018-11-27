@@ -2,8 +2,8 @@ import { KEYUTIL, KJUR} from "jsrsasign"
 
 const getJWT = () => {
   console.log(process.env.GATSBY_KEY)
-  console.log(KEYUTIL.getKey(process.env.GATSBY_KEY))
-  var key = KEYUTIL.getKey(process.env.GATSBY_KEY);
+  console.log(KEYUTIL.getKey(`${process.env.GATSBY_KEY}`))
+  var key = KEYUTIL.getKey(`${process.env.GATSBY_KEY}`);
   var headers = { "alg": "RS256", "typ": "JWT" };
   var issued = Math.floor(new Date().getTime()/1000);
 
