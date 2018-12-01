@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import About from "./About"
 import Resume from "./Resume"
 import Contact from "./Contact"
 
-import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 
 class Main extends React.Component {
@@ -15,13 +15,7 @@ class Main extends React.Component {
     return (
       <div ref={this.props.setWrapperRef} id="main" style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
 
-        <article id="about" className={`${this.props.article === 'about' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">About</h2>
-          <span className="image main"><img src={pic01} alt="" /></span>
-          <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#projects">awesome work</a>.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-          {close}
-        </article>
+        <About article={this.props.article} articleTimeout={this.props.articleTimeout} close={close}/>
 
         <article id="projects" className={`${this.props.article === 'projects' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">Projects</h2>
