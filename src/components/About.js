@@ -1,11 +1,84 @@
-import React from 'react';
+import React from 'react'
+
+import profile from '../images/profile.jpg'
+
+const countMonths = () => {
+  const startDate = new Date(2018, 5, 4)
+  const endDate = new Date()
+  const differenceInMonths =
+    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+    (endDate.getMonth() - startDate.getMonth())
+  return differenceInMonths
+}
+
+const developmentSkills = [
+  'HTML|75',
+  'CSS|50',
+  'Javascript|65',
+  'React|55',
+  'Node.JS|50',
+  'REST API|55',
+  'MongoDB|40',
+  'Python|10',
+]
 
 const About = props => (
   <article id="about" className={`${props.article === 'about' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
   <h2 className="major">About</h2>
-  {/* <span className="image main"><img src={pic01} alt="" /></span> */}
-  <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#projects">awesome work</a>.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+    <span className="image profile">
+      <img src={profile} alt="" />
+    </span>
+    <p>Hi, I am Min Zhuang!</p>
+    <p>
+      After 2 years of experience as a business user, working with developers to
+      create performance dashboard and commission system to automate some of my
+      team's processes, I fell in love with technology, and wanted to also be
+      able to create products that make life easier for users.
+    </p>
+    <p>
+      So {countMonths()} months back, I joined a{' '}
+      <a
+        target="_blank"
+        without
+        rel="noopener noreferrer"
+        href="https://www.thoughtworks.com/jumpstart"
+      >
+        3 month agile web development coaching program offered by ThoughtWorks
+      </a>{' '}
+      and am now ready to take up the challenges to become a web developer
+      myself.
+    </p>
+    <p>Here are a list of skills I am currently familiarising myself with:</p>
+    <div className="skills">
+      <div className="charts">
+        <div className="chart chart--dev">
+          <ul className="chart--horiz">
+            {developmentSkills.map(skill => {
+              const skillName = skill.split('|')[0]
+              const mastery = `${skill.split('|')[1]}%`
+              return (
+                <li className="chart__bar" style={{ width: mastery }}>
+                  <span className="chart__label">{skillName}</span>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p>
+      Note: This site was not built from scratch by me.
+      <a
+        target="_blank"
+        without
+        rel="noopener noreferrer"
+        href="https://www.gatsbyjs.org/starters/gatsby-starter-dimension/"
+      >
+        {' '}
+        Here is a link
+      </a> to the template I used.
+    </p>
+    <p />
   {props.close}
 </article>
 );

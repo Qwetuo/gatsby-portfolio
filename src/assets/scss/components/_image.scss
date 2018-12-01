@@ -71,6 +71,17 @@
 			img {
 				width: 100%;
 			}
+    }
+    
+    &.profile {
+			display: block;
+			width: 40%;
+      float: left;
+      margin-right: 5%;
+
+			img {
+				width: 100%;
+			}
 		}
 
 		@include breakpoint(small) {
