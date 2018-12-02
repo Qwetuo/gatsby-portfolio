@@ -5,6 +5,8 @@ import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
 
+import { graphql } from "gatsby"
+
 class IndexPage extends React.Component {
   constructor(props) {
     super(props)
@@ -102,6 +104,8 @@ class IndexPage extends React.Component {
               article={this.state.article}
               onCloseArticle={this.handleCloseArticle}
               setWrapperRef={this.setWrapperRef}
+              projects={this.props.data.allMarkdownRemark.edges}
+              onOpenArticle={this.handleOpenArticle}
             />
             <Footer timeout={this.state.timeout} />
           </div>
@@ -113,3 +117,24 @@ class IndexPage extends React.Component {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+            desc
+            priority
+            effort_days
+            website
+            source_code
+            tags
+          }
+          html
+        }
+      }
+    }
+  }
+  `

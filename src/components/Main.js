@@ -16,7 +16,7 @@ class Main extends React.Component {
 
         <About article={this.props.article} articleTimeout={this.props.articleTimeout} close={close}/>
 
-        <Projects article={this.props.article} articleTimeout={this.props.articleTimeout} close={close}/>
+        <Projects article={this.props.article} articleTimeout={this.props.articleTimeout} close={close} projects={this.props.projects} onOpenArticle={this.props.onOpenArticle}/>
 
         <Resume article={this.props.article} articleTimeout={this.props.articleTimeout} close={close}/>
         

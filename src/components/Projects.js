@@ -1,11 +1,29 @@
 import React from 'react';
 
+import "../assets/css/projects.css";
+
 const Projects = props => {
+  const projects = props.projects.sort((a,b) => b.node.frontmatter.priority - a.node.frontmatter.priority)
   return (
     <article id="projects" className={`${props.article === 'projects' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
       <h2 className="major">Projects</h2>
-      <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-      <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+      {projects.map(project => {
+        const { title, desc, priority, effort_days, website, source_code, tags} = project.node.frontmatter
+        return (
+          <div className="card">
+            <div className="card-header">
+            <h3>{title}</h3>
+            <a target="_blank" rel="noopener noreferrer" href={source_code} className="icon fa-github fa-lg"><span className="label">GitHub</span></a>
+            <a target="_blank" rel="noopener noreferrer" href={website} className="icon fa-external-link fa-lg"><span className="label">Link</span></a>
+            </div>
+            <hr />
+            <div className="clear description">
+              <p>{desc}</p>
+              <p>Built in {effort_days}+ days with {tags.join(" | ")}</p>
+            </div>
+          </div>
+        )
+      })}
       {props.close}
     </article>
   );
