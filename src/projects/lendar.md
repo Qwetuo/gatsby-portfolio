@@ -1,6 +1,6 @@
 ---
 title: "Lendar"
-desc: "An events-job matching portal that allows job seeker to filter job search based on days they are available."
+desc: "An events-job matching portal that allows job seeker to filter job search based on days they are available. (Still in prototype stage - More information on GitHub page)"
 priority: 7
 effort-days: 20
 website: "https://lendar-prototype.herokuapp.com/"

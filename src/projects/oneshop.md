@@ -1,6 +1,6 @@
 ---
 title: "One Shop"
-desc: "A review site where people can share what they are buying in stores. (Incomplete)"
+desc: "A review site where people can share what they are buying in stores. (Still in prototype stage - More information on GitHub page)"
 priority: 5
 effort-days: 5
 website: "https://min-one-shop.herokuapp.com/"
