@@ -5,7 +5,7 @@ priority: 4
 effort-days: 5
 website: "https://minzhuang.herokuapp.com/"
 source-code: "https://github.com/Qwetuo/gatsby-portfolio"
-tags: ["Javascript", "Gatsby", "React", "GraphQL"]
+tags: ["Javascript", "Gatsby", "React", "GraphQL","Google Sheets API"]
 ---
 Built on top of a Gatsby starter template that can be found on https://www.gatsbyjs.org/starters/gatsby-starter-dimension/
 
