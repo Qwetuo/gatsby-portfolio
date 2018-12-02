@@ -1,6 +1,6 @@
 ---
 title: "Get A Life"
-desc: "An web app that facilitates scheduling of a user's social life/events"
+desc: "An web app that facilitates scheduling of a user's social life/events. (Built with 4 other mentees from ThoughtWorks JumpStart program with agile practices.)"
 priority: 8
 effort-days: 15
 website: "https://get-a-life-ui-staging.herokuapp.com/"
