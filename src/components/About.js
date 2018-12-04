@@ -66,18 +66,6 @@ const About = props => (
         </div>
       </div>
     </div>
-    <p>
-      Note: This site was not built from scratch by me.
-      <a
-        target="_blank"
-        without
-        rel="noopener noreferrer"
-        href="https://www.gatsbyjs.org/starters/gatsby-starter-dimension/"
-      >
-        {' '}
-        Here is a link
-      </a> to the template I used.
-    </p>
     <p />
   {props.close}
 </article>
