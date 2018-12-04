@@ -76,7 +76,7 @@ const About = props => (
     <p>
       Click on{' '}
       <a
-        href
+        href="javascript:;"
         onClick={() => {
           props.onOpenArticle('projects')
         }}
