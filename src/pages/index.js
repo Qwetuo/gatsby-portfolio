@@ -4,6 +4,9 @@ import Layout from '../components/layout'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
+import BurgerMenu from "../components/BurgerMenu"
+
+import '../assets/css/project-card.css'
 
 import { graphql } from "gatsby"
 
@@ -20,6 +23,7 @@ class IndexPage extends React.Component {
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
     this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.setMenuWrapperRef = this.setMenuWrapperRef.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
@@ -43,6 +47,10 @@ class IndexPage extends React.Component {
 
   setWrapperRef(node) {
     this.wrapperRef = node;
+  }
+
+  setMenuWrapperRef(node) {
+    this.menuWrapperRef = node;
   }
 
   handleOpenArticle(article) {
@@ -93,7 +101,7 @@ class IndexPage extends React.Component {
   }
 
   handleClickOutside(event) {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+    if (this.wrapperRef && this.menuWrapperRef && !this.wrapperRef.contains(event.target) && !this.menuWrapperRef.contains(event.target)) {
       if (this.state.isArticleVisible) {
         this.handleCloseArticle();
       }
@@ -116,7 +124,14 @@ class IndexPage extends React.Component {
               projects={this.props.data.allMarkdownRemark.edges}
               onOpenArticle={this.handleOpenArticle}
             />
-            <Footer timeout={this.state.timeout} />
+            
+            {this.state.isArticleVisible ? 
+            <BurgerMenu 
+              onOpenArticle={this.handleOpenArticle} 
+              setMenuWrapperRef={this.setMenuWrapperRef}
+            />
+            : <Footer timeout={this.state.timeout} />}
+
           </div>
           <div id="bg"></div>
         </div>
