@@ -41,8 +41,8 @@ const Layout = ({ children, location }) => {
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
+              { name: 'description', content: 'Chew Min Zhuang Developer Portfolio' },
+              { name: 'keywords', content: 'chew min zhuang, min zhuang, portfolio, personal website, developer, web developer, singapore' },
             ]}
             script={[
               {src: "https://apis.google.com/js/client:plusone.js"}

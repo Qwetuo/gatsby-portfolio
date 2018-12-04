@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "Min Zhuang",
-    author: "Chew Min Zhuang, Hunter Chang - Gatsby template",
+    author: "Chew Min Zhuang, Hunter Chang (Gatsby Starter Template - Dimension)",
     description: "Chew Min Zhuang developer portfolio"
   },
   plugins: [
