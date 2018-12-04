@@ -23,8 +23,14 @@ const developmentSkills = [
 ]
 
 const About = props => (
-  <article id="about" className={`${props.article === 'about' ? 'active' : ''} ${props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-  <h2 className="major">About</h2>
+  <article
+    id="about"
+    className={`${props.article === 'about' ? 'active' : ''} ${
+      props.articleTimeout ? 'timeout' : ''
+    }`}
+    style={{ display: 'none' }}
+  >
+    <h2 className="major">About</h2>
     <span className="image profile">
       <img src={profile} alt="" />
     </span>
@@ -67,8 +73,20 @@ const About = props => (
       </div>
     </div>
     <p />
-  {props.close}
-</article>
-);
+    <p>
+      Click on{' '}
+      <a
+        href
+        onClick={() => {
+          props.onOpenArticle('projects')
+        }}
+      >
+        projects
+      </a>{' '}
+      to check out some of the websites I have created with them.
+    </p>
+    {props.close}
+  </article>
+)
 
-export default About;
+export default About

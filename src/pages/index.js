@@ -37,29 +37,38 @@ class IndexPage extends React.Component {
     document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
+  componentDidUpdate() {
+    window.scrollTo(0, 0)
+  }
+
   setWrapperRef(node) {
     this.wrapperRef = node;
   }
 
   handleOpenArticle(article) {
 
-    this.setState({
-      isArticleVisible: !this.state.isArticleVisible,
-      article
-    })
-
-    setTimeout(() => {
+    if (this.state.article !== "") {
       this.setState({
-        timeout: !this.state.timeout
+        article
       })
-    }, 325)
-
-    setTimeout(() => {
+    } else {
       this.setState({
-        articleTimeout: !this.state.articleTimeout
+        isArticleVisible: !this.state.isArticleVisible,
+        article
       })
-    }, 350)
 
+      setTimeout(() => {
+        this.setState({
+          timeout: !this.state.timeout
+        })
+      }, 325)
+
+      setTimeout(() => {
+        this.setState({
+          articleTimeout: !this.state.articleTimeout
+        })
+      }, 350)
+    }
   }
 
   handleCloseArticle() {

@@ -14,7 +14,7 @@ class Main extends React.Component {
     return (
       <div ref={this.props.setWrapperRef} id="main" style={this.props.timeout ? {display: 'flex'} : {display: 'none'}}>
 
-        <About article={this.props.article} articleTimeout={this.props.articleTimeout} close={close}/>
+        <About article={this.props.article} articleTimeout={this.props.articleTimeout} close={close}  onOpenArticle={this.props.onOpenArticle}/>
 
         <Projects article={this.props.article} articleTimeout={this.props.articleTimeout} close={close} projects={this.props.projects} onOpenArticle={this.props.onOpenArticle}/>
 
