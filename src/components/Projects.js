@@ -34,7 +34,7 @@ class Projects extends Component {
           const thisIndexIsOpened =
             this.state.indexOpened === index ? true : false
           return (
-            <div onClick={() => this.toggleLearnMore(index)}>
+            <div key={index} onClick={() => this.toggleLearnMore(index)}>
               <ProjectCard
                 key={index}
                 frontmatter={project.node.frontmatter}

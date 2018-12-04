@@ -58,11 +58,15 @@ const About = props => (
       <div className="charts">
         <div className="chart chart--dev">
           <ul className="chart--horiz">
-            {developmentSkills.map(skill => {
+            {developmentSkills.map((skill, index) => {
               const skillName = skill.split('|')[0]
               const mastery = `${skill.split('|')[1]}%`
               return (
-                <li className="chart__bar" style={{ width: mastery }}>
+                <li
+                  key={index}
+                  className="chart__bar"
+                  style={{ width: mastery }}
+                >
                   <span className="chart__label">{skillName}</span>
                 </li>
               )
