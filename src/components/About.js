@@ -45,7 +45,6 @@ const About = props => (
       So {countMonths()} months back, I joined a{' '}
       <a
         target="_blank"
-        without
         rel="noopener noreferrer"
         href="https://www.thoughtworks.com/jumpstart"
       >

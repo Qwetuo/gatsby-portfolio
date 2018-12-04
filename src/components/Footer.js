@@ -7,7 +7,6 @@ const Footer = props => (
       &copy; Gatsby Starter - Dimension. Design:{' '}
       <a
         target="_blank"
-        without
         rel="noopener noreferrer"
         href="https://html5up.net"
       >
@@ -16,7 +15,6 @@ const Footer = props => (
       . Built with:
       <a
         target="_blank"
-        without
         rel="noopener noreferrer"
         href="https://www.gatsbyjs.org/starters/gatsby-starter-dimension/"
       >
