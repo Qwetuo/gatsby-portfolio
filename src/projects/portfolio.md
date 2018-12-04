@@ -7,10 +7,9 @@ website: "https://minzhuang.herokuapp.com/"
 source-code: "https://github.com/Qwetuo/gatsby-portfolio"
 tags: ["Javascript", "Gatsby", "React", "GraphQL","Google Sheets API"]
 ---
+### Info
 Built on top of a Gatsby starter template that can be found on https://www.gatsbyjs.org/starters/gatsby-starter-dimension/
 
- Created with
- -
- * Gatsby
- * REACT
- * GraphQL
+### Created with
+
+Gatsby | REACT | GraphQL | Google Sheets API
