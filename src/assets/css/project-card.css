@@ -1,10 +1,15 @@
 .card {
   border-radius: 25px;
-  background: black;
+  background: #00000096;
   background-position: left top;
   background-repeat: repeat;
   padding: 1em;
   margin: 1em 0;
+  transition: box-shadow .3s;  
+}
+
+.card:hover {
+  box-shadow: 0 0 15px gray; 
 }
 
 .card-header h3 {
@@ -29,4 +34,13 @@ hr {
 
 p {
   margin: 0.5em 0;
+}
+
+.card-learn-more {
+  border-radius: 20px;
+  background-color: #bdbdbbe7;
+  color: black;
+  width: 95%;
+  margin: 1.5em auto;
+  padding: 1em;
 }
