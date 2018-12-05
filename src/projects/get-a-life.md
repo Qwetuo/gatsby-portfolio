@@ -16,4 +16,6 @@ This app was created among 5 mentees for our final group project during ThoughtW
 ### Created with
 NodeJS | REACT | Semantic UI React | React Infinite Calendar | Express | MongoDB (on Heroku mLab) | TDD practice | and automated tests with Jest | Cypress test | Circle CI | Swagger UI | mongoose | passport-jwt
 
+Github page for react/ui [here]("https://github.com/derekc2205/get-a-life-ui")
+
 Github page for server [here](https://github.com/derekc2205/get-a-life-api)
