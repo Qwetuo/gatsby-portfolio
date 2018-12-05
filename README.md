@@ -1,19 +1,27 @@
-# gatsby-starter-dimension
+# Min Zhuang Portfolio (Gatsby)
+### Info
+Built on top of a Gatsby starter template that can be found [here](https://www.gatsbyjs.org/starters/gatsby-starter-dimension/) or visit the demo page [here](https://gatsby-dimension.surge.sh/)
 
-**This is a starter for Gatsby.js V2.**
+Features added by me:
+* About: Skill bar - source code [here](https://github.com/Qwetuo/gatsby-portfolio/blob/master/src/components/About.js)
+* Projects: Card/div showing information about the projects from markdown files in [this folder](https://github.com/Qwetuo/gatsby-portfolio/tree/master/src/projects) - source code [here](https://github.com/Qwetuo/gatsby-portfolio/blob/master/src/components/ProjectCard.js)
+* Contact: Configured contact form to trigger google sheets api to append a new row into a spreadsheet in my drive - source code [here](https://github.com/Qwetuo/gatsby-portfolio/blob/master/src/components/Contact.js)
+* Burger Menu: Added menu at bottom right of page for easier navigation - source code [here](https://github.com/Qwetuo/gatsby-portfolio/blob/master/src/components/BurgerMenu.js)
 
-**The older V1 version of this starter can be found on the v1 branch:**
 
-Gatsby.js V2 starter based on the Dimension site template, designed by HTML5 UP. Check out https://codebushi.com/gatsby-starters/ for more Gatsby starters and templates.
+### Installation / Running locally
 
-## Preview
+* `
+git clone https://github.com/Qwetuo/oneshop`
+* `npm install`
+* If you would like the contact form to access your google sheets, please include the following environmental variables in an .env file.
+  * `GATSBY_API` : On https://console.developers.google.com/ , create a project, enable Google Sheets API and get the API key
+  * `GATSBY_EMAIL` : Create a service account and get the client_email from the json file
+  * `GATSBY_KEY` : from the same json file, get the key private_key (Note: for it to work when deployed, change the env var's "\n" to new paragraph spacing)
+  * `GATSBY_SHEET_ID` : Create a sheet with field "Name","Email", "Message", "Date" and get its sheet ID from the link URL
+* Run `gatsby develop` in the terminal to start the dev site.
 
-https://gatsby-dimension.surge.sh/
 
-## Installation
+### Created with
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-<br/>
-`gatsby new gatsby-starter-dimension https://github.com/codebushi/gatsby-starter-dimension`
-
-Run `gatsby develop` in the terminal to start the dev site.
+Gatsby | REACT | GraphQL | Google Sheets API
