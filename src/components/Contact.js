@@ -44,14 +44,14 @@ class Contact extends Component {
     const accessToken = await getAccessToken()
 
     await window.gapi.client.init({
-      apiKey: "AIzaSyBYeWBrCu_l_cynQsyxgdHKSfq8dUgPREE",
+      apiKey: process.env.GATSBY_API,
       discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4" ]
     })
 
     await window.gapi.client.setToken({access_token: accessToken})
 
     const response = await window.gapi.client.sheets.spreadsheets.values.append({
-      spreadsheetId: "1eC4q4oBn2VbS3ta7U59BGChUNRXzUJkmWC6Buyi1i4E",
+      spreadsheetId: process.env.GATSBY_SHEET_ID,
       range: 'A1',
       valueInputOption: "USER_ENTERED",
       resource: {
