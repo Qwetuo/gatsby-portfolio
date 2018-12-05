@@ -41,40 +41,43 @@ class Contact extends Component {
 
   handleSubmit = async e => {
     const date = new Date();
-    const accessToken = await getAccessToken()
+    try {
 
-    await window.gapi.client.init({
-      apiKey: process.env.GATSBY_API,
-      discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4" ]
-    })
+      const accessToken = await getAccessToken()
 
-    await window.gapi.client.setToken({access_token: accessToken})
-
-    const response = await window.gapi.client.sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.GATSBY_SHEET_ID,
-      range: 'A1',
-      valueInputOption: "USER_ENTERED",
-      resource: {
-        values: [
-          [
-            "",
-            this.state.name,
-            this.state.email,
-            this.state.message,
-            date
-           ]
-        ]
-      }
-    })
-
-    if (response.status === 200) {
-      this.setState({
-        name: "",
-        email: "",
-        message: "",
-        userMessage: "Your message have been logged and I will be in contact with you soon. :)"
+      await window.gapi.client.init({
+        apiKey: process.env.GATSBY_API,
+        discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4" ]
       })
-    } else {
+
+      await window.gapi.client.setToken({access_token: accessToken})
+
+      const response = await window.gapi.client.sheets.spreadsheets.values.append({
+        spreadsheetId: process.env.GATSBY_SHEET_ID,
+        range: 'A1',
+        valueInputOption: "USER_ENTERED",
+        resource: {
+          values: [
+            [
+              "",
+              this.state.name,
+              this.state.email,
+              this.state.message,
+              date
+            ]
+          ]
+        }
+      })
+
+      if (response.status === 200) {
+        this.setState({
+          name: "",
+          email: "",
+          message: "",
+          userMessage: "Your message have been logged and I will be in contact with you soon. :)"
+        })
+      }
+    } catch(error) {
       this.setState({
         userMessage: "Sorry your response could not be submitted through this form. Do contact me by dropping an email to chewminzhuang@hotmail.com instead."
       })
