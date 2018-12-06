@@ -108,6 +108,7 @@ class Contact extends Component {
         </form>
         <div>{this.state.userMessage}</div>
         <ul className="icons">
+          <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/minzhuang/" className="icon fa-linkedin fa-2x"><span className="label">LinkedIn</span></a></li>
           <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/qwetuo" className="icon fa-github fa-2x"><span className="label">GitHub</span></a></li>
         </ul>
         {this.props.close}

@@ -10,7 +10,7 @@ const Resume = props => (
         <p>File not showing? Click <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/15cA94vj3XniU9TKF6Dv4m0euIB3dJq5g/view?usp=sharing">here</a> to view it on google drive instead.</p>
       </object>
     </div>
-    <p>Last updated: 26 November 2018</p>
+    <p>Last updated: 6 December 2018</p>
     {props.close}
   </article>
 );
